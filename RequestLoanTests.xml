@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RequestLoanTests">
+    <test name="RequestLoan: DownPayment ">
+        <classes>
+            <class name="RequestLoanTest.RequestLoan">
+                <methods>
+                    <include name="downPayment"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RequestLoan: AvailableFunds">
+        <classes>
+            <class name="RequestLoanTest.RequestLoan">
+                <methods>
+                    <include name="availableFunds"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RequestLoan: Combined">
+        <classes>
+            <class name="RequestLoanTest.RequestLoan">
+                <methods>
+                    <include name="combined"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

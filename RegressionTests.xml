@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RegressionTest">
+    <suite-files>
+        <suite-file path="RequestLoanTests.xml"/>
+        <suite-file path="LoginTests.xml"/>
+    </suite-files>
+
+    <test name="AccountOverview">
+        <classes>
+            <class name="AccountOverviewTest.AccountOverview"/>
+        </classes>
+    </test>
+
+    <test name="BillPay">
+        <classes>
+            <class name="BillPayTest.BillPay"/>
+        </classes>
+    </test>
+
+    <test name="FindTransaction">
+        <classes>
+            <class name="FindTransactionTest.FindTransaction"/>
+        </classes>
+    </test>
+
+    <test name="OpenNewAccountTest">
+        <classes>
+            <class name="OpenNewAccountTest.OpenNewAccount"/>
+        </classes>
+    </test>
+
+    <test name="RegisterTest">
+        <classes>
+            <class name="RegisterTest.Register"/>
+        </classes>
+    </test>
+
+    <test name="TransferFunds">
+        <classes>
+            <class name="TransferFundsTest.TransferFunds"/>
+        </classes>
+    </test>
+
+    <test name="UpdateContactInfo">
+        <classes>
+            <class name="UpdatedContactInfoTest.UpdatedContactInfo"/>
+        </classes>
+    </test>
+</suite>
+

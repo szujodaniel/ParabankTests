@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SmokeTest">
+    <suite-files>
+        <suite-file path="LoginTests.xml" />
+        <suite-file path="RequestLoanTests.xml"/>
+    </suite-files>
+
+    <test name="OpenNewAccount">
+        <classes>
+            <class name="OpenNewAccountTest.OpenNewAccount"/>
+        </classes>
+    </test>
+
+    <test name="TransferFunds">
+        <classes>
+            <class name="TransferFundsTest.TransferFunds"/>
+        </classes>
+    </test>
+
+    <test name="Register">
+        <classes>
+            <class name="RegisterTest.Register"/>
+        </classes>
+    </test>
+</suite>
+

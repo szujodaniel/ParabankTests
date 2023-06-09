@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="LoginPage">
+    <test name="LoginPage: Empty username / Empty password">
+        <parameter name="username" value=""/>
+        <parameter name="password" value=""/>
+
+        <classes>
+            <class name="LoginTest.Login">
+                <methods>
+                    <include name="LoginEmpty"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="LoginPage: Empty username / Wrong password">
+        <parameter name="username" value=""/>
+        <parameter name="password" value="wrong password"/>
+
+        <classes>
+            <class name="LoginTest.Login">
+            <methods>
+                <include name="LoginEmpty"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="LoginPage: Wrong username / Empty password">
+        <parameter name="username" value="wrong password"/>
+        <parameter name="password" value=""/>
+
+        <classes>
+            <class name="LoginTest.Login">
+                <methods>
+                    <include name="LoginEmpty"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="LoginPage: Wrong username / Valid password">
+        <parameter name="validUsername" value="wrong username"/>
+        <parameter name="validPassword" value="valid"/>
+
+        <classes>
+            <class name="LoginTest.Login">
+                <methods>
+                    <include name="LoginValid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="LoginPage: Valid username / Wrong password">
+        <parameter name="validUsername" value="valid"/>
+        <parameter name="validPassword" value="wrong password"/>
+
+        <classes>
+            <class name="LoginTest.Login">
+                <methods>
+                    <include name="LoginValid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="LoginPage: Wrong username / Wrong password">
+        <parameter name="wrongUsername" value="wrong username"/>
+        <parameter name="wrongPassword" value="wrong password"/>
+
+        <classes>
+            <class name="LoginTest.Login">
+                <methods>
+                    <include name="LoginWrong"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="LoginPage: Valid username / Valid password">
+        <parameter name="validUsername" value="valid"/>
+        <parameter name="validPassword" value="valid"/>
+
+        <classes>
+            <class name="LoginTest.Login">
+                <methods>
+                    <include name="LoginValid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
