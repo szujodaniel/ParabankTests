@@ -17,9 +17,9 @@ public class FindTransaction extends DriverBase {
         TransferFundsPage transferFundsPage = new TransferFundsPage(driver, wait);
         FindTransactionPage findTransactionPage = new FindTransactionPage(driver, wait);
 
-        adminPage.accountDataClear();
+        adminPage.accountDataClean();
         String dataBaseCleanedText = adminPage.getDatabaseCleanedText();
-        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned.");
+        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned");
 
         registerPage.goToRegisterPage();
         registerPage.registration();
@@ -32,7 +32,7 @@ public class FindTransaction extends DriverBase {
         transferFundsPage.transferButtonClick();
         String transferCompleteText = transferFundsPage.getTransferCompleteText();
         Assert.assertEquals(transferCompleteText, "Transfer Complete!");
-        System.out.println("Transfer Completed!");
+        System.out.println("Transfer Completed.");
 
         findTransactionPage.goToFindTransactionsPage();
 

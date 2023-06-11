@@ -9,7 +9,7 @@
         <classes>
             <class name="LoginTest.Login">
                 <methods>
-                    <include name="LoginEmpty"/>
+                    <include name="loginEmpty"/>
                 </methods>
             </class>
 
@@ -23,7 +23,7 @@
         <classes>
             <class name="LoginTest.Login">
             <methods>
-                <include name="LoginEmpty"/>
+                <include name="loginEmpty"/>
             </methods>
             </class>
         </classes>
@@ -36,7 +36,7 @@
         <classes>
             <class name="LoginTest.Login">
                 <methods>
-                    <include name="LoginEmpty"/>
+                    <include name="loginEmpty"/>
                 </methods>
             </class>
         </classes>
@@ -49,7 +49,7 @@
         <classes>
             <class name="LoginTest.Login">
                 <methods>
-                    <include name="LoginValid"/>
+                    <include name="loginValid"/>
                 </methods>
             </class>
         </classes>
@@ -62,7 +62,7 @@
         <classes>
             <class name="LoginTest.Login">
                 <methods>
-                    <include name="LoginValid"/>
+                    <include name="loginValid"/>
                 </methods>
             </class>
         </classes>
@@ -75,7 +75,7 @@
         <classes>
             <class name="LoginTest.Login">
                 <methods>
-                    <include name="LoginWrong"/>
+                    <include name="loginWrong"/>
                 </methods>
             </class>
         </classes>
@@ -88,7 +88,7 @@
         <classes>
             <class name="LoginTest.Login">
                 <methods>
-                    <include name="LoginValid"/>
+                    <include name="loginValid"/>
                 </methods>
             </class>
         </classes>

@@ -73,78 +73,28 @@ public class AdminPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void accountDataClear(){
+    public void accountDataClean(){
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(15));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(30));
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
 
         // Check the server status (Running or Stopped)
         if (this.running.isDisplayed()) {
             System.out.println("Server is Running.");
         } else {
-            this.wait.until(ExpectedConditions.elementToBeClickable(this.startup));
-            this.startup.click();
+            this.wait.until(ExpectedConditions.elementToBeClickable(startup));
+            startup.click();
             System.out.println("Server changed to Running.");
         }
         this.wait.until(ExpectedConditions.elementToBeClickable(this.clear));
         this.clear.click();
         System.out.println("Database cleared.");
-    }
-
-    public void setup(){
-
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(15));
-        driver.get("https://parabank.parasoft.com/parabank/admin.htm");
-
-        // Check the server status (Running or Stopped)
-        if (this.running.isDisplayed()) {
-            System.out.println("Server is Running.");
-        } else {
-            this.wait.until(ExpectedConditions.elementToBeClickable(this.startup));
-            this.startup.click();
-            System.out.println("Server changed to Running.");
-        }
-
-        // Clear the Database
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.clear));
-        this.clear.click();
-        System.out.println("Database cleared.");
-
-        // Choose Database type (JDBC)
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.databaseType));
-        this.databaseType.click();
-        System.out.println("JDBC database is set.");
-
-        // Clear the endpoints (Web service)
-        List<WebElement> webService = driver.findElements(By.className("inputLarge"));
-        for (int i = 0; i < webService.size(); i++) {
-            webService.get(i).clear();
-        }
-        System.out.println("Endpoints cleared.");
-
-        // Set Application Settings
-        this.wait.until(ExpectedConditions.visibilityOf(this.initBalance));
-        this.initBalance.clear();
-        this.initBalance.sendKeys("1000");
-
-        this.wait.until(ExpectedConditions.visibilityOf(this.minimumBalance));
-        this.minimumBalance.clear();
-        this.minimumBalance.sendKeys("1000");
-
-        this.wait.until(ExpectedConditions.visibilityOf(this.loanProvider));
-        this.loanProviderSelect = new Select(loanProvider);
-        this.loanProviderSelect.selectByVisibleText("Local");
-
-        this.wait.until(ExpectedConditions.elementToBeClickable(this.submitButton));
-        this.submitButton.click();
-
     }
 
     public void adminPageSetupDownPayment() {
 
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(15));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
 
         // Check the server status (Running or Stopped)
@@ -202,8 +152,8 @@ public class AdminPage {
 
     public void adminPageSetupCombined(){
 
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(15));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
 
         // Check the server status (Running or Stopped)
@@ -258,13 +208,12 @@ public class AdminPage {
 
         System.out.println("Application is set to Combined.");
 
-
     }
 
     public void adminPageSetupAvailableFunds(){
 
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(15));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
 
         // Check the server status (Running or Stopped)

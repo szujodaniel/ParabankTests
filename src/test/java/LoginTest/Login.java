@@ -18,10 +18,9 @@ public class Login extends DriverBase {
         AdminPage adminPage = new AdminPage(driver, wait);
         LoginPage loginPage = new LoginPage(driver, wait);
 
-        adminPage.setup();
-        String adminPageStatus = adminPage.getSettingSavedText();
-        Assert.assertEquals(adminPageStatus, "Settings saved successfully.");
-        System.out.println("Settings saved successfully.");
+        adminPage.accountDataClean();
+        String dataBaseCleanedText = adminPage.getDatabaseCleanedText();
+        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned");
 
         loginPage.goToLoginPage();
         loginPage.emptyUsernameEmptyPassword(username, password);
@@ -37,15 +36,15 @@ public class Login extends DriverBase {
         AdminPage adminPage = new AdminPage(driver, wait);
         LoginPage loginPage = new LoginPage(driver, wait);
 
-        adminPage.accountDataClear();
+        adminPage.accountDataClean();
         String dataBaseCleanedText = adminPage.getDatabaseCleanedText();
-        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned.");
+        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned");
 
         loginPage.goToLoginPage();
         loginPage.wrongUsernameWrongPassword(wrongUsername, wrongPassword);
         String actualErrorText = loginPage.getError();
         Assert.assertEquals(actualErrorText, "The username and password could not be verified.");
-        System.out.println("Login proceed successfully.");
+        System.out.println("Login proceed successfully. ");
     }
 
     @Test(description = "valid username/password")
@@ -56,10 +55,9 @@ public class Login extends DriverBase {
         LoginPage loginPage = new LoginPage(driver, wait);
         RegisterPage registerPage = new RegisterPage(driver, wait);
 
-        adminPage.setup();
-        String adminPageStatus = adminPage.getSettingSavedText();
-        Assert.assertEquals(adminPageStatus, "Settings saved successfully.");
-        System.out.println("Settings saved successfully.");
+        adminPage.accountDataClean();
+        String dataBaseCleanedText = adminPage.getDatabaseCleanedText();
+        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned");;
 
         registerPage.goToRegisterPage();
         registerPage.registration();

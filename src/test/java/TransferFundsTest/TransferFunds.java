@@ -16,9 +16,9 @@ public class TransferFunds extends DriverBase {
         RegisterPage registerPage = new RegisterPage(driver, wait);
         TransferFundsPage transferFundsPage = new TransferFundsPage(driver, wait);
 
-        adminPage.accountDataClear();
+        adminPage.accountDataClean();
         String dataBaseCleanedText = adminPage.getDatabaseCleanedText();
-        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned.");
+        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned");
 
         registerPage.goToRegisterPage();
         registerPage.registration();

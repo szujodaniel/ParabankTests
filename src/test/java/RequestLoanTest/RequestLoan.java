@@ -15,6 +15,7 @@ import static Utilities.GetDataFromExcel.*;
 
 public class RequestLoan extends DriverBase {
 
+
     @DataProvider
     static Iterator<Object[]> getDownPaymentData() throws IOException {
         return downPaymentData().iterator();
@@ -30,8 +31,7 @@ public class RequestLoan extends DriverBase {
         return combinedData().iterator();
     }
 
-
-    @Test(dataProvider = "getDownPaymentData",priority = 1)
+    @Test(dataProvider = "getDownPaymentData", priority = 1)
     public void downPayment(String amount) {
         AdminPage adminPage = new AdminPage(driver, wait);
         RegisterPage registerPage = new RegisterPage(driver, wait);
@@ -55,12 +55,15 @@ public class RequestLoan extends DriverBase {
         String status = requestLoanPage.getStatusText();
         if (amount.equalsIgnoreCase("500") || amount.equalsIgnoreCase("501")) {
             Assert.assertEquals(status, "Approved");
+            System.out.println("Request Approved." + "\n---------------");
         } else {
             Assert.assertEquals(status, "Denied");
+            System.out.println("Request Denied." + "\n---------------");
+
         }
     }
 
-    @Test(dataProvider = "getAvailableFundsData",priority = 3)
+    @Test(dataProvider = "getAvailableFundsData", priority = 3)
     public void availableFunds(String amount) {
         AdminPage adminPage = new AdminPage(driver, wait);
         RegisterPage registerPage = new RegisterPage(driver, wait);
@@ -82,14 +85,18 @@ public class RequestLoan extends DriverBase {
         requestLoanPage.addDownPayment(amount);
         requestLoanPage.applyNow();
         String status = requestLoanPage.getStatusText();
-        if (amount.equalsIgnoreCase("1000")) {
+        if (amount.equalsIgnoreCase("1000") || amount.equalsIgnoreCase("999")) {
             Assert.assertEquals(status, "Approved");
+            Assert.assertEquals(status, "Approved");
+            System.out.println("Request Approved." + "\n---------------");
         } else {
             Assert.assertEquals(status, "Denied");
+            Assert.assertEquals(status, "Approved");
+            System.out.println("Request Denied" + "\n---------------");
         }
     }
 
-    @Test(dataProvider = "getCombinedData",priority = 2)
+    @Test(dataProvider = "getCombinedData", priority = 2)
     public void combined(String amount) {
         AdminPage adminPage = new AdminPage(driver, wait);
         RegisterPage registerPage = new RegisterPage(driver, wait);
@@ -110,11 +117,19 @@ public class RequestLoan extends DriverBase {
         requestLoanPage.addLoanAmount("1000");
         requestLoanPage.addDownPayment(amount);
         requestLoanPage.applyNow();
-        String status = requestLoanPage.getStatusText();
-        if (amount.equalsIgnoreCase("1000") || amount.equalsIgnoreCase("500")) {
+        if (amount.equalsIgnoreCase("500") || amount.equalsIgnoreCase("499")) {
+            String status = requestLoanPage.getStatusText();
             Assert.assertEquals(status, "Approved");
+            Assert.assertEquals(status, "Approved");
+            System.out.println("Request Approved." + "\n---------------");
+        } else if (amount.equalsIgnoreCase("1000")) {
+            String errorText = requestLoanPage.getErrorText();
+            Assert.assertEquals(errorText, "An internal error has occurred and has been logged.");
         } else {
+            String status = requestLoanPage.getStatusText();
             Assert.assertEquals(status, "Denied");
+            Assert.assertEquals(status, "Approved");
+            System.out.println("Request Denied." + "\n---------------");
         }
     }
 }

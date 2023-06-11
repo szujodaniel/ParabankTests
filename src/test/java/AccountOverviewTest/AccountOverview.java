@@ -15,9 +15,9 @@ public class AccountOverview extends DriverBase {
         RegisterPage registerPage = new RegisterPage(driver, wait);
         AccountOverviewPage accountOverviewPage = new AccountOverviewPage(driver, wait);
 
-        adminPage.accountDataClear();
+        adminPage.accountDataClean();
         String dataBaseCleanedText = adminPage.getDatabaseCleanedText();
-        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned.");
+        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned");
 
         registerPage.goToRegisterPage();
         registerPage.registration();
@@ -29,6 +29,6 @@ public class AccountOverview extends DriverBase {
         accountOverviewPage.chooseAccountNumber();
         String accountNumberText = accountOverviewPage.getAccountTypeText();
         Assert.assertEquals(accountNumberText, "CHECKING");
-        System.out.println("Account overviewed successfully");
+        System.out.println("Account overviewed successfully.");
     }
 }

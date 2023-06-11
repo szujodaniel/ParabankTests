@@ -16,9 +16,9 @@ public class BillPay extends DriverBase {
         RegisterPage registerPage = new RegisterPage(driver, wait);
         BillPayPage billPayPage = new BillPayPage(driver, wait);
 
-        adminPage.accountDataClear();
+        adminPage.accountDataClean();
         String dataBaseCleanedText = adminPage.getDatabaseCleanedText();
-        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned.");
+        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned");
 
         registerPage.goToRegisterPage();
         registerPage.registration();

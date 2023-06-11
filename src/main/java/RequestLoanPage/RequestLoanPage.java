@@ -1,6 +1,6 @@
 package RequestLoanPage;
 
-import dev.failsafe.internal.util.Assert;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,6 +27,9 @@ public class RequestLoanPage {
 
     @FindBy(id = "loanStatus")
     private WebElement loanStatus;
+
+    @FindBy(className = "error")
+    private WebElement errorText;
 
 
 
@@ -61,4 +64,12 @@ public class RequestLoanPage {
         this.wait.until(ExpectedConditions.visibilityOf(this.loanStatus));
         return this.loanStatus.getText();
     }
+
+    public String getErrorText(){
+        this.wait.until(ExpectedConditions.visibilityOf(this.errorText));
+        return this.errorText.getText();
+    }
+
+
+
 }

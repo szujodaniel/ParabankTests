@@ -16,9 +16,9 @@ public class OpenNewAccount extends DriverBase {
         RegisterPage registerPage = new RegisterPage(driver, wait);
         OpenNewAccountPage openNewAccountPage = new OpenNewAccountPage(driver, wait);
 
-        adminPage.accountDataClear();
+        adminPage.accountDataClean();
         String dataBaseCleanedText = adminPage.getDatabaseCleanedText();
-        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned.");
+        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned");
 
         registerPage.goToRegisterPage();
         registerPage.registration();
@@ -29,10 +29,10 @@ public class OpenNewAccount extends DriverBase {
         openNewAccountPage.checkingAccount();
         String accountOpenedText = openNewAccountPage.getAccountOpenedText();
         Assert.assertEquals(accountOpenedText, "Congratulations, your account is now open.");
-        System.out.println("New Checking account opened");
+        System.out.println("New Checking account opened.");
 
         openNewAccountPage.savingsAccount();
         Assert.assertEquals(accountOpenedText, "Congratulations, your account is now open.");
-        System.out.println("New Savings account opened");
+        System.out.println("New Savings account opened.");
     }
 }

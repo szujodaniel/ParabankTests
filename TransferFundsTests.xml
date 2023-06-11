@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TransferFunds">
+    <test name="TransferFunds">
+        <classes>
+            <class name="TransferFundsTest.TransferFunds">
+                <methods>
+                    <include name="transferFunds"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

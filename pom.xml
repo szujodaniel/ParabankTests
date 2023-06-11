@@ -36,10 +36,16 @@
             <artifactId>poi</artifactId>
             <version>5.2.3</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.3.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
-        <finalName>ParabankTestsMaven</finalName>
+        <finalName>parabankdocker</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -83,5 +89,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

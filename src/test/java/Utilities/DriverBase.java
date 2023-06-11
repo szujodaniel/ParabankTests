@@ -1,25 +1,25 @@
 package Utilities;
 
+
 import org.openqa.selenium.WebDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import java.time.Duration;
+
+import static io.github.bonigarcia.wdm.config.DriverManagerType.CHROME;
 
 public class DriverBase {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    @BeforeMethod
-    public void driverSetup() {
+    @BeforeTest
+    public void driverSetup()  {
 
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-
-      //  ChromeOptions options = new ChromeOptions();
-      //  options.addArguments("--headless", "--window-size=1920,1200");
+        WebDriverManager.getInstance(CHROME).setup();
 
         driver = new ChromeDriver();
 
@@ -29,13 +29,11 @@ public class DriverBase {
 
         driver.manage().deleteAllCookies();
 
-        System.out.println("Driver Started");
+        System.out.println("Driver Started.");
     }
-
-    @AfterMethod
+    @AfterTest
     public void driverQuit() {
         driver.quit();
-        System.out.println("Driver stopped");
+        System.out.println("Driver stopped.");
     }
-
 }

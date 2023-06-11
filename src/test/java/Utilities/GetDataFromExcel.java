@@ -2,9 +2,12 @@ package Utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import org.apache.poi.xssf.usermodel.*;
+
+
 
 public class GetDataFromExcel {
 
@@ -12,8 +15,13 @@ public class GetDataFromExcel {
 
         ArrayList<Object[]> downPayment = new ArrayList<>();
 
-        String excelFilePath = "resources/requestLoanTestData.xlsx";
-        FileInputStream inputStream = new FileInputStream(excelFilePath);
+        // String excelFilePath = "resources/requestLoanTestData.xlsx";
+        // FileInputStream inputStream = new FileInputStream(excelFilePath);
+
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        InputStream inputStream = loader.getResourceAsStream("requestLoanTestData.xlsx");
+
+
 
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
 
@@ -27,7 +35,7 @@ public class GetDataFromExcel {
 
             XSSFCell cell = row.getCell(0);
 
-            String value = String.valueOf((int) cell.getNumericCellValue());
+            String value = String.valueOf((int)cell.getNumericCellValue());
 
             Object[] obj = {value};
             downPayment.add(obj);
@@ -54,7 +62,7 @@ public class GetDataFromExcel {
 
             XSSFCell cell = row.getCell(1);
 
-            String amount = String.valueOf((int) cell.getNumericCellValue());
+            String amount = String.valueOf((int)cell.getNumericCellValue());
 
             Object[] obj = {amount};
             availableFunds.add(obj);
@@ -81,7 +89,7 @@ public class GetDataFromExcel {
 
             XSSFCell cell = row.getCell(2);
 
-            String value = String.valueOf((int) cell.getNumericCellValue());
+            String value = String.valueOf((int)cell.getNumericCellValue());
 
             Object[] obj = {value};
             combined.add(obj);

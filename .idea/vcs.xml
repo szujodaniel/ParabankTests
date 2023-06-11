@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../../selenium-docker" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Parabank-Automated-Test-Cases" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>

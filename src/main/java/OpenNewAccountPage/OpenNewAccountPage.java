@@ -39,7 +39,7 @@ public class OpenNewAccountPage {
         this.wait.until(ExpectedConditions.visibilityOf(this.accountType));
         Select selectType = new Select(this.accountType);
         selectType.selectByValue("0");
-        Thread.sleep(100);
+        Thread.sleep(1000);
         this.openNewAccountButton.click();
     }
 
@@ -49,7 +49,7 @@ public class OpenNewAccountPage {
         this.wait.until(ExpectedConditions.visibilityOf(this.accountType));
         selectType = new Select(this.accountType);
         selectType.selectByValue("1");
-        Thread.sleep(100);
+        Thread.sleep(1000);
         this.openNewAccountButton.click();
     }
 

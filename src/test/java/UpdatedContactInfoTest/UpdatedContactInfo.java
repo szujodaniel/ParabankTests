@@ -15,9 +15,9 @@ public class UpdatedContactInfo extends DriverBase {
         RegisterPage registerPage = new RegisterPage(driver, wait);
         UpdateContactInfoPage updateContactInfoPage = new UpdateContactInfoPage(driver, wait);
 
-        adminPage.accountDataClear();
+        adminPage.accountDataClean();
         String dataBaseCleanedText = adminPage.getDatabaseCleanedText();
-        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned.");
+        Assert.assertEquals(dataBaseCleanedText, "Database Cleaned");
 
         registerPage.goToRegisterPage();
         registerPage.registration();
