@@ -1,9 +1,9 @@
 # ParabankTests
 Parabank "Account Services" Automated Test Cases using: Maven,Selenium,TestNG
 
-High Level Test Cases
-•	Account Services
-  o	Open new account
+###High Level Test Cases
+##•	Account Services
+#  o	Open new account
     The user can choose various types of account (checking or savings) and open a new account. 
   o	Transfer Funds
 	  The user can transfer funds between existing accounts.
