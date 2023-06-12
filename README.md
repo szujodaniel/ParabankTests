@@ -33,9 +33,10 @@
 |Valid Password|-|True|-|True|False|True|False|
 |Empty Username|True|True|False|False|False|False|False|
 |Empty Password|True|False|True|False|False|False|False|
-|Effects|
-|:---:|
+|Effects                                               |
+
 |Error: Please enter a username and password|True|True|True|False|False|False|False|
 |Error: The username and password could not be verified|False|False|False|False|True|True|True|
 |Succesful Login|False|False|False|True|False|False|False|
 
+#   Test Techniques - Login - Decision Table
