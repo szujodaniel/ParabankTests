@@ -15,13 +15,8 @@ public class GetDataFromExcel {
 
         ArrayList<Object[]> downPayment = new ArrayList<>();
 
-        // String excelFilePath = "resources/requestLoanTestData.xlsx";
-        // FileInputStream inputStream = new FileInputStream(excelFilePath);
-
-        ClassLoader loader = Thread.currentThread().getContextClassLoader();
-        InputStream inputStream = loader.getResourceAsStream("requestLoanTestData.xlsx");
-
-
+        String excelFilePath = "resources/requestLoanTestData.xlsx";
+        FileInputStream inputStream = new FileInputStream(excelFilePath);
 
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
 

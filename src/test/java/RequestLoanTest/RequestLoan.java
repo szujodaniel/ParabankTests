@@ -87,11 +87,9 @@ public class RequestLoan extends DriverBase {
         String status = requestLoanPage.getStatusText();
         if (amount.equalsIgnoreCase("1000") || amount.equalsIgnoreCase("999")) {
             Assert.assertEquals(status, "Approved");
-            Assert.assertEquals(status, "Approved");
             System.out.println("Request Approved." + "\n---------------");
         } else {
             Assert.assertEquals(status, "Denied");
-            Assert.assertEquals(status, "Approved");
             System.out.println("Request Denied" + "\n---------------");
         }
     }
@@ -120,15 +118,14 @@ public class RequestLoan extends DriverBase {
         if (amount.equalsIgnoreCase("500") || amount.equalsIgnoreCase("499")) {
             String status = requestLoanPage.getStatusText();
             Assert.assertEquals(status, "Approved");
-            Assert.assertEquals(status, "Approved");
             System.out.println("Request Approved." + "\n---------------");
         } else if (amount.equalsIgnoreCase("1000")) {
             String errorText = requestLoanPage.getErrorText();
             Assert.assertEquals(errorText, "An internal error has occurred and has been logged.");
+            System.out.println("An internal error has occurred and has been logged." + "\n---------------");
         } else {
             String status = requestLoanPage.getStatusText();
             Assert.assertEquals(status, "Denied");
-            Assert.assertEquals(status, "Approved");
             System.out.println("Request Denied." + "\n---------------");
         }
     }
